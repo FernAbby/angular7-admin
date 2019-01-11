@@ -1,0 +1,62 @@
+<!-- NG-ZORRO -->
+<nz-layout>
+  <!-- 左侧边栏 -->
+  <nz-sider [nzCollapsedWidth]="71" [nzWidth]="240" nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate">
+    <div class="logo">
+      <img alt="Angular Logo" src="{{site.logo}}">
+      <span class="logo_title">{{site.title}}</span>
+    </div>
+    <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
+      <ng-container *ngFor="let menu of site.menus; index as i;">
+        <li nz-submenu *ngIf="menu.children && menu.children.length > 0">
+          <span title>
+            <i nz-icon type="{{menu.icon}}" theme="outline"></i>
+            <span class="nav-text">{{menu.title}}</span>
+          </span>
+          <ul>
+            <li nz-menu-item *ngFor="let submenu of menu.children; index as j;">
+              <a routerLink="{{submenu.path}}">{{submenu.title}}</a>
+            </li>
+          </ul>
+        </li>
+        <li nz-menu-item *ngIf="!menu.children || menu.children.length === 0">
+          <a routerLink="{{menu.path}}">
+            <span>
+              <i nz-icon type="{{menu.icon}}"></i>
+              <span class="nav-text">{{menu.title}}</span>
+            </span>
+          </a>
+        </li>
+      </ng-container>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <div>
+      <!-- 顶部导航 -->
+      <nz-header>
+        <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed" (click)="isCollapsed=!isCollapsed"></i>
+        <nz-dropdown [nzTrigger]="'hover'" class="fr">
+          <a class="ant-dropdown-link" nz-dropdown>
+            管理员
+            <i class="anticon anticon-down"></i>
+          </a>
+          <ul nz-menu class="admin">
+            <li nz-menu-item>系统设置</li>
+            <li nz-menu-item>退出</li>
+          </ul>
+        </nz-dropdown>
+      </nz-header>
+      <!-- 面包屑导航 -->
+      <nz-content>
+        <nz-breadcrumb [nzAutoGenerate]="true"></nz-breadcrumb>
+        <!-- 内容区域 -->
+        <div class="ant-content">
+
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+      <!-- 底部提示 -->
+      <nz-footer>Ant Design ©2018 Implement By Angular</nz-footer>
+    </div>
+  </nz-layout>
+</nz-layout>

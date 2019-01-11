@@ -1,0 +1,95 @@
+@import "../assets/styles/common";
+:host ::ng-deep .ant-layout-has-sider {
+  height: 100%;
+  .logo {
+    height: 65px;
+    line-height: 65px;
+    overflow: hidden;
+    span {
+      color: #fff;
+    }
+    img {
+      height: 65px;
+      float: left;
+    }
+  }
+  .nav-text a {
+    color: $nav-color;
+    text-decoration: none;
+  }
+  .ant-menu-dark .ant-menu-item-selected a {
+    color: $nav-color-hover !important;
+  }
+  .ant-menu-root.ant-menu-inline, .ant-menu-root.ant-menu-vertical, .ant-menu-root.ant-menu-vertical-left, .ant-menu-root.ant-menu-vertical-right {
+    height: calc(100vh - 65px);
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &::-webkit-scrollbar-track {
+      border: none;
+    }
+  }
+}
+
+:host ::ng-deep .ant-layout-sider-collapsed {
+  .logo {
+    padding: 0 3px;
+  }
+  .ant-menu-inline-collapsed {
+    width: 71px;
+   .ant-menu-item,
+   .ant-menu-item-group>.ant-menu-item-group-list>.ant-menu-item,
+   .ant-menu-item-group>.ant-menu-item-group-list>.ant-menu-submenu>.ant-menu-submenu-title,
+   .ant-menu-submenu>.ant-menu-submenu-title {
+      padding: 0 27px !important;
+    }
+  }
+}
+:host ::ng-deep .ant-layout-header {
+  .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 16px;
+    cursor: pointer;
+    transition: color .3s;
+  }
+}
+
+/*右浮动*/
+.fr {
+  float: right;
+  padding-right: 15px;
+}
+
+.ant-dropdown-link {
+  min-width: 80px;
+  line-height: 30px;
+  margin: 16px 0;
+  display: inline-block;
+  text-align: right;
+  cursor: pointer;
+}
+.ant-layout-header {
+  padding:0;
+  background: $white-color;
+}
+
+.ant-layout-content {
+  margin:0 16px;
+}
+
+.ant-breadcrumb {
+  margin:12px 0;
+}
+
+.ant-content {
+  min-height: calc(100vh - 160px);
+  padding: 16px 20px;
+  background-color: $white-color;
+}
+
+.ant-layout-footer {
+  padding: 15px 50px;
+  text-align: center;
+}
