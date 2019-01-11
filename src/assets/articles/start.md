@@ -1,4 +1,4 @@
-# 基础教程
+# 基于 Angular CLI 新建项目
 
 ## 安装脚手架工具
 
@@ -49,15 +49,24 @@ $ ng g c home // or
 - home.component.spec.ts —— 单元测试文件
 - home.component.ts —— 组件JS文件
 
+# Angular创建组件
+
 ## 创建组件
 
 `
 $ cd src/app/components
 $ ng generate component alert  // --inline-template --inline-style 
-$ ng g c alert // or
+$ ng g c alert -it -is // or # 表示新建组件，该组件使用内联模板和内联样式
 `
 
-执行上述操作，生成组件。Angular CLI 会自动帮我们更新 app.module.ts 文件，把新建的组件添加到 NgModule 的 declarations 数组中。
+执行上述操作，生成组件：
+- alert.component.spec.ts - 用于单元测试
+- alert.component.ts - 新建的组件
+
+Angular CLI 会自动帮我们更新 app.module.ts 文件，把新建的组件添加到 NgModule 的 declarations 数组中。
+
+
+
 
 
 
