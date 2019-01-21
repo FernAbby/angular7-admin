@@ -16,9 +16,11 @@ import { AppComponent } from './app.component';
 
 // 页面
 import { HomesComponent } from './pages/homes/homes.component';
-import { PolicyComponent } from './pages/policy/policy.component';
 import { StartComponent } from './pages/start/start.component';
-import { TableComponent } from './pages/table/table.component';
+import { DemoComponent } from './pages/demo/demo.component';
+import { TableComponent } from './pages/demo/table/index.component';
+import { TableSimpleComponent } from './pages/demo/table/table-simple/table-simple.component';
+import { TableEditableComponent } from './pages/demo/table/table-editable/table-editable.component';
 
 // 组件
 import { AlertComponent } from './components/alert/alert.component';
@@ -29,10 +31,12 @@ registerLocaleData(zh);
   declarations: [
     AppComponent,
     HomesComponent,
-    PolicyComponent,
     StartComponent,
+    DemoComponent,
     AlertComponent,
     TableComponent,
+    TableSimpleComponent,
+    TableEditableComponent,
   ],
   imports: [
     BrowserModule,

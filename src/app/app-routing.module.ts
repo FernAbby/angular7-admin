@@ -4,7 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 // 引入组件
 import { HomesComponent } from './pages/homes/homes.component';
 import { StartComponent } from './pages/start/start.component';
-import { PolicyComponent } from './pages/policy/policy.component';
+import { TableComponent } from './pages/demo/table/index.component';
+import { DemoComponent } from './pages/demo/demo.component';
+import { TableSimpleComponent } from './pages/demo/table/table-simple/table-simple.component';
+import { TableEditableComponent } from './pages/demo/table/table-editable/table-editable.component';
 
 const routes: Routes = [{
   path: '',
@@ -25,17 +28,33 @@ const routes: Routes = [{
     breadcrumb: '基础教程'
   }
 }, {
-  path: 'policy',
-  component: PolicyComponent,
-  children: [ // 配置子路由
+  path: 'demo',
+  component: DemoComponent,
+  children: [
     {
-      path: 'list',
-      component: PolicyComponent,
+      path: 'table',
+      component: TableComponent,
       data: {
-        breadcrumb: '示例中心'
+        breadcrumb: '表格'
       },
+      children: [{
+        path: 'simple',
+        component: TableSimpleComponent,
+        data: {
+          breadcrumb: '简单表格'
+        },
+      }, {
+        path: 'editable',
+        component: TableEditableComponent,
+        data: {
+          breadcrumb: '可编辑表格'
+        },
+      }]
     },
   ]
+}, {
+    path: '**',// 匹配不到路由时加载
+    redirectTo: 'homes'
 }];
 
 @NgModule({

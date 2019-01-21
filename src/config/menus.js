@@ -12,7 +12,7 @@ const menus = [
     icon: 'appstore',
     children: [{
       title: '表格',
-      path: '/policy/list',
+      path: '/demo/table',
       icon: 'schedule'
     }]
   },
