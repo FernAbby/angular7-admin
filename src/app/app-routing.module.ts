@@ -38,7 +38,7 @@ const routes: Routes = [{
         breadcrumb: '表格'
       },
       children: [{
-        path: 'simple',
+        path: '',
         component: TableSimpleComponent,
         data: {
           breadcrumb: '简单表格'
