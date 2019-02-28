@@ -12,6 +12,7 @@ http://localhost:4200/
 ## 常用命令
 
 执行`ng generate component component-name`生成新组件
+
 `ng generate directive|pipe|service|class|guard|interface|enum|module`
 
 ## 打包项目
